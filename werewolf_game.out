@@ -1,0 +1,273 @@
+============================== Mace4 =================================
+Mace4 (64) version 2009-11A, November 2009.
+Process 92140 was started by mihai_leo on PCMihai,
+Tue Dec 10 20:38:09 2024
+The command was "/mnt/c/users/leomi/documents/ac/3.1/ai/LADR-2009-11A/bin/mace4 -f werewolf_game.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file werewolf_game.in
+
+assign(max_models,-1).
+assign(domain_size,4).
+    % assign(domain_size, 4) -> assign(start_size, 4).
+    % assign(domain_size, 4) -> assign(end_size, 4).
+
+formulas(conditions).
+werewolf(P1) | villager(P1) | cop(P1) | doctor(P1).
+werewolf(P2) | villager(P2) | cop(P2) | doctor(P2).
+werewolf(P3) | villager(P3) | cop(P3) | doctor(P3).
+werewolf(P4) | villager(P4) | cop(P4) | doctor(P4).
+werewolf(P5) | villager(P5) | cop(P5) | doctor(P5).
+werewolf(P6) | villager(P6) | cop(P6) | doctor(P6).
+-werewolf(P1) | -villager(P1).
+-werewolf(P1) | -cop(P1).
+-werewolf(P1) | -doctor(P1).
+-villager(P1) | -cop(P1).
+-villager(P1) | -doctor(P1).
+-cop(P1) | -doctor(P1).
+-werewolf(P2) | -villager(P2).
+-werewolf(P2) | -cop(P2).
+-werewolf(P2) | -doctor(P2).
+-villager(P2) | -cop(P2).
+-villager(P2) | -doctor(P2).
+-cop(P2) | -doctor(P2).
+-werewolf(P3) | -villager(P3).
+-werewolf(P3) | -cop(P3).
+-werewolf(P3) | -doctor(P3).
+-villager(P3) | -cop(P3).
+-villager(P3) | -doctor(P3).
+-cop(P3) | -doctor(P3).
+-werewolf(P4) | -villager(P4).
+-werewolf(P4) | -cop(P4).
+-werewolf(P4) | -doctor(P4).
+-villager(P4) | -cop(P4).
+-villager(P4) | -doctor(P4).
+-cop(P4) | -doctor(P4).
+-werewolf(P5) | -villager(P5).
+-werewolf(P5) | -cop(P5).
+-werewolf(P5) | -doctor(P5).
+-villager(P5) | -cop(P5).
+-villager(P5) | -doctor(P5).
+-cop(P5) | -doctor(P5).
+-werewolf(P6) | -villager(P6).
+-werewolf(P6) | -cop(P6).
+-werewolf(P6) | -doctor(P6).
+-villager(P6) | -cop(P6).
+-villager(P6) | -doctor(P6).
+-cop(P6) | -doctor(P6).
+werewolf(P1) & werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P3) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P4) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P5) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6) | werewolf(P1) & werewolf(P6) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) | werewolf(P2) & werewolf(P3) & -werewolf(P1) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P2) & werewolf(P4) & -werewolf(P1) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6) | werewolf(P2) & werewolf(P5) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6) | werewolf(P2) & werewolf(P6) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) | werewolf(P3) & werewolf(P4) & -werewolf(P1) & -werewolf(P2) & -werewolf(P5) & -werewolf(P6) | werewolf(P3) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P6) | werewolf(P3) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5) | werewolf(P4) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P6) | werewolf(P4) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5) | werewolf(P5) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4).
+cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & cop(P6).
+doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & doctor(P6).
+end_of_list.
+
+formulas(conditions_statemants).
+-cop(P1).
+-doctor(P1).
+cop(P2) -> werewolf(P1).
+-cop(P2) -> werewolf(P2).
+-werewolf(P1) -> werewolf(P2).
+doctor(P3) -> -werewolf(P1).
+-doctor(P3) -> werewolf(P3).
+-werewolf(P1) -> doctor(P3).
+-cop(P4).
+-doctor(P4).
+-cop(P5).
+-doctor(P5).
+cop(P6) -> -werewolf(P5).
+-cop(P6) -> werewolf(P6).
+werewolf(P5) -> werewolf(P6).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 werewolf(P1) & werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P3) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P4) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6) | werewolf(P1) & werewolf(P5) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6) | werewolf(P1) & werewolf(P6) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) | werewolf(P2) & werewolf(P3) & -werewolf(P1) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6) | werewolf(P2) & werewolf(P4) & -werewolf(P1) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6) | werewolf(P2) & werewolf(P5) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6) | werewolf(P2) & werewolf(P6) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) | werewolf(P3) & werewolf(P4) & -werewolf(P1) & -werewolf(P2) & -werewolf(P5) & -werewolf(P6) | werewolf(P3) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P6) | werewolf(P3) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5) | werewolf(P4) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P6) | werewolf(P4) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5) | werewolf(P5) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) # label(non_clause).  [assumption].
+2 cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & cop(P3) & -cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & cop(P4) & -cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & cop(P5) & -cop(P6) | -cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & cop(P6) # label(non_clause).  [assumption].
+3 doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & doctor(P4) & -doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & doctor(P5) & -doctor(P6) | -doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & doctor(P6) # label(non_clause).  [assumption].
+4 cop(P2) -> werewolf(P1) # label(non_clause).  [assumption].
+5 -cop(P2) -> werewolf(P2) # label(non_clause).  [assumption].
+6 -werewolf(P1) -> werewolf(P2) # label(non_clause).  [assumption].
+7 doctor(P3) -> -werewolf(P1) # label(non_clause).  [assumption].
+8 -doctor(P3) -> werewolf(P3) # label(non_clause).  [assumption].
+9 -werewolf(P1) -> doctor(P3) # label(non_clause).  [assumption].
+10 cop(P6) -> -werewolf(P5) # label(non_clause).  [assumption].
+11 -cop(P6) -> werewolf(P6) # label(non_clause).  [assumption].
+12 werewolf(P5) -> werewolf(P6) # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+werewolf(P1) | villager(P1) | cop(P1) | doctor(P1).
+werewolf(P2) | villager(P2) | cop(P2) | doctor(P2).
+werewolf(P3) | villager(P3) | cop(P3) | doctor(P3).
+werewolf(P4) | villager(P4) | cop(P4) | doctor(P4).
+werewolf(P5) | villager(P5) | cop(P5) | doctor(P5).
+werewolf(P6) | villager(P6) | cop(P6) | doctor(P6).
+-werewolf(P1) | -villager(P1).
+-werewolf(P1) | -cop(P1).
+-werewolf(P1) | -doctor(P1).
+-villager(P1) | -cop(P1).
+-villager(P1) | -doctor(P1).
+-cop(P1) | -doctor(P1).
+-werewolf(P2) | -villager(P2).
+-werewolf(P2) | -cop(P2).
+-werewolf(P2) | -doctor(P2).
+-villager(P2) | -cop(P2).
+-villager(P2) | -doctor(P2).
+-cop(P2) | -doctor(P2).
+-werewolf(P3) | -villager(P3).
+-werewolf(P3) | -cop(P3).
+-werewolf(P3) | -doctor(P3).
+-villager(P3) | -cop(P3).
+-villager(P3) | -doctor(P3).
+-cop(P3) | -doctor(P3).
+-werewolf(P4) | -villager(P4).
+-werewolf(P4) | -cop(P4).
+-werewolf(P4) | -doctor(P4).
+-villager(P4) | -cop(P4).
+-villager(P4) | -doctor(P4).
+-cop(P4) | -doctor(P4).
+-werewolf(P5) | -villager(P5).
+-werewolf(P5) | -cop(P5).
+-werewolf(P5) | -doctor(P5).
+-villager(P5) | -cop(P5).
+-villager(P5) | -doctor(P5).
+-cop(P5) | -doctor(P5).
+-werewolf(P6) | -villager(P6).
+-werewolf(P6) | -cop(P6).
+-werewolf(P6) | -doctor(P6).
+-villager(P6) | -cop(P6).
+-villager(P6) | -doctor(P6).
+-cop(P6) | -doctor(P6).
+werewolf(P1) | werewolf(P2) | werewolf(P3) | werewolf(P4) | werewolf(P5).
+werewolf(P1) | werewolf(P2) | werewolf(P6) | werewolf(P3) | werewolf(P4).
+werewolf(P1) | werewolf(P2) | werewolf(P6) | werewolf(P3) | werewolf(P5).
+werewolf(P1) | werewolf(P2) | werewolf(P6) | werewolf(P4) | werewolf(P5).
+werewolf(P1) | werewolf(P3) | werewolf(P4) | werewolf(P5) | werewolf(P6).
+werewolf(P2) | werewolf(P3) | werewolf(P4) | werewolf(P5) | werewolf(P6).
+-werewolf(P3) | -werewolf(P2) | -werewolf(P1).
+-werewolf(P4) | -werewolf(P2) | -werewolf(P1).
+-werewolf(P4) | -werewolf(P3) | -werewolf(P1).
+-werewolf(P4) | -werewolf(P3) | -werewolf(P2).
+-werewolf(P4) | -werewolf(P3) | -werewolf(P6).
+-werewolf(P4) | -werewolf(P3) | -werewolf(P5).
+-werewolf(P4) | -werewolf(P5) | -werewolf(P1).
+-werewolf(P4) | -werewolf(P5) | -werewolf(P2).
+-werewolf(P4) | -werewolf(P5) | -werewolf(P6).
+-werewolf(P5) | -werewolf(P2) | -werewolf(P1).
+-werewolf(P5) | -werewolf(P3) | -werewolf(P1).
+-werewolf(P5) | -werewolf(P3) | -werewolf(P2).
+-werewolf(P5) | -werewolf(P3) | -werewolf(P6).
+-werewolf(P6) | -werewolf(P2) | -werewolf(P1).
+-werewolf(P6) | -werewolf(P2) | -werewolf(P3).
+-werewolf(P6) | -werewolf(P2) | -werewolf(P4).
+-werewolf(P6) | -werewolf(P2) | -werewolf(P5).
+-werewolf(P6) | -werewolf(P3) | -werewolf(P1).
+-werewolf(P6) | -werewolf(P4) | -werewolf(P1).
+-werewolf(P6) | -werewolf(P5) | -werewolf(P1).
+cop(P1) | cop(P2) | cop(P3) | cop(P4) | cop(P5) | cop(P6).
+-cop(P2) | -cop(P1).
+-cop(P3) | -cop(P1).
+-cop(P3) | -cop(P2).
+-cop(P4) | -cop(P1).
+-cop(P4) | -cop(P2).
+-cop(P4) | -cop(P3).
+-cop(P4) | -cop(P5).
+-cop(P4) | -cop(P6).
+-cop(P5) | -cop(P1).
+-cop(P5) | -cop(P2).
+-cop(P5) | -cop(P3).
+-cop(P5) | -cop(P6).
+-cop(P6) | -cop(P1).
+-cop(P6) | -cop(P2).
+-cop(P6) | -cop(P3).
+doctor(P1) | doctor(P2) | doctor(P3) | doctor(P4) | doctor(P5) | doctor(P6).
+-doctor(P2) | -doctor(P1).
+-doctor(P3) | -doctor(P1).
+-doctor(P3) | -doctor(P2).
+-doctor(P4) | -doctor(P1).
+-doctor(P4) | -doctor(P2).
+-doctor(P4) | -doctor(P3).
+-doctor(P4) | -doctor(P5).
+-doctor(P4) | -doctor(P6).
+-doctor(P5) | -doctor(P1).
+-doctor(P5) | -doctor(P2).
+-doctor(P5) | -doctor(P3).
+-doctor(P5) | -doctor(P6).
+-doctor(P6) | -doctor(P1).
+-doctor(P6) | -doctor(P2).
+-doctor(P6) | -doctor(P3).
+-cop(P1).
+-doctor(P1).
+-cop(P2) | werewolf(P1).
+cop(P2) | werewolf(P2).
+werewolf(P1) | werewolf(P2).
+-doctor(P3) | -werewolf(P1).
+doctor(P3) | werewolf(P3).
+werewolf(P1) | doctor(P3).
+-cop(P4).
+-doctor(P4).
+-cop(P5).
+-doctor(P5).
+-cop(P6) | -werewolf(P5).
+cop(P6) | werewolf(P6).
+-werewolf(P5) | werewolf(P6).
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== MODEL =================================
+
+interpretation( 4, [number=1, seconds=0], [
+
+        function(P1, [ 0 ]),
+
+        function(P2, [ 1 ]),
+
+        function(P3, [ 2 ]),
+
+        function(P4, [ 1 ]),
+
+        function(P5, [ 0 ]),
+
+        function(P6, [ 3 ]),
+
+        relation(cop(_), [ 0, 0, 0, 1 ]),
+
+        relation(doctor(_), [ 0, 0, 1, 0 ]),
+
+        relation(villager(_), [ 1, 0, 0, 0 ]),
+
+        relation(werewolf(_), [ 0, 1, 0, 0 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=115, kept=115.
+Selections=40, assignments=112, propagations=406, current_models=1.
+Rewrite_terms=3442, rewrite_bools=3981, indexes=1783.
+Rules_from_neg_clauses=6, cross_offs=26.
+
+============================== end of statistics =====================
+
+User_CPU=0.01, System_CPU=0.01, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 92140 exit (all_models) Tue Dec 10 20:38:09 2024
+The process finished Tue Dec 10 20:38:09 2024

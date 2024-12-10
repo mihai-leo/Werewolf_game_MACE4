@@ -1,0 +1,118 @@
+assign(max_models, -1).
+assign(domain_size,4).
+formulas(conditions).
+% Defining a small domain with 6 players
+werewolf(P1) | villager(P1) | cop(P1) | doctor(P1).
+werewolf(P2) | villager(P2) | cop(P2) | doctor(P2).
+werewolf(P3) | villager(P3) | cop(P3) | doctor(P3).
+werewolf(P4) | villager(P4) | cop(P4) | doctor(P4).
+werewolf(P5) | villager(P5) | cop(P5) | doctor(P5).
+werewolf(P6) | villager(P6) | cop(P6) | doctor(P6).
+
+% No player can have more than one role
+- werewolf(P1) | - villager(P1).
+- werewolf(P1) | - cop(P1).
+- werewolf(P1) | - doctor(P1).
+- villager(P1) | - cop(P1).
+- villager(P1) | - doctor(P1).
+- cop(P1) | - doctor(P1).
+
+- werewolf(P2) | - villager(P2).
+- werewolf(P2) | - cop(P2).
+- werewolf(P2) | - doctor(P2).
+- villager(P2) | - cop(P2).
+- villager(P2) | - doctor(P2).
+- cop(P2) | - doctor(P2).
+
+- werewolf(P3) | - villager(P3).
+- werewolf(P3) | - cop(P3).
+- werewolf(P3) | - doctor(P3).
+- villager(P3) | - cop(P3).
+- villager(P3) | - doctor(P3).
+- cop(P3) | - doctor(P3).
+
+- werewolf(P4) | - villager(P4).
+- werewolf(P4) | - cop(P4).
+- werewolf(P4) | - doctor(P4).
+- villager(P4) | - cop(P4).
+- villager(P4) | - doctor(P4).
+- cop(P4) | - doctor(P4).
+
+- werewolf(P5) | - villager(P5).
+- werewolf(P5) | - cop(P5).
+- werewolf(P5) | - doctor(P5).
+- villager(P5) | - cop(P5).
+- villager(P5) | - doctor(P5).
+- cop(P5) | - doctor(P5).
+
+- werewolf(P6) | - villager(P6).
+- werewolf(P6) | - cop(P6).
+- werewolf(P6) | - doctor(P6).
+- villager(P6) | - cop(P6).
+- villager(P6) | - doctor(P6).
+- cop(P6) | - doctor(P6).
+
+% Exactly 2 werewolves in the group of 6 players:
+(werewolf(P1) & werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P1) & werewolf(P3) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P1) & werewolf(P4) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P1) & werewolf(P5) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6)) |
+(werewolf(P1) & werewolf(P6) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5)) |
+(werewolf(P2) & werewolf(P3) & -werewolf(P1) & -werewolf(P4) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P2) & werewolf(P4) & -werewolf(P1) & -werewolf(P3) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P2) & werewolf(P5) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P6)) |
+(werewolf(P2) & werewolf(P6) & -werewolf(P1) & -werewolf(P3) & -werewolf(P4) & -werewolf(P5)) |
+(werewolf(P3) & werewolf(P4) & -werewolf(P1) & -werewolf(P2) & -werewolf(P5) & -werewolf(P6)) |
+(werewolf(P3) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P6)) |
+(werewolf(P3) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P4) & -werewolf(P5)) |
+(werewolf(P4) & werewolf(P5) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P6)) |
+(werewolf(P4) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P5)) |
+(werewolf(P5) & werewolf(P6) & -werewolf(P1) & -werewolf(P2) & -werewolf(P3) & -werewolf(P4)).
+
+% Exactly 1 cop in the group of 6 players:
+(cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6)) |
+(-cop(P1) & cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & -cop(P6)) |
+(-cop(P1) & -cop(P2) & cop(P3) & -cop(P4) & -cop(P5) & -cop(P6)) |
+(-cop(P1) & -cop(P2) & -cop(P3) & cop(P4) & -cop(P5) & -cop(P6)) |
+(-cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & cop(P5) & -cop(P6)) |
+(-cop(P1) & -cop(P2) & -cop(P3) & -cop(P4) & -cop(P5) & cop(P6)).
+
+% Exactly 1 doctor in the group of 6 players:
+(doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6)) |
+(-doctor(P1) & doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6)) |
+(-doctor(P1) & -doctor(P2) & doctor(P3) & -doctor(P4) & -doctor(P5) & -doctor(P6)) |
+(-doctor(P1) & -doctor(P2) & -doctor(P3) & doctor(P4) & -doctor(P5) & -doctor(P6)) |
+(-doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & doctor(P5) & -doctor(P6)) |
+(-doctor(P1) & -doctor(P2) & -doctor(P3) & -doctor(P4) & -doctor(P5) & doctor(P6)).
+
+end_of_list.
+formulas(conditions_statemants).
+% Player statements
+% P1 says they are a villager
+-cop(P1).
+-doctor(P1).
+
+% P2  says they are the cop and P1 is a werewolf
+cop(P2)->werewolf(P1).
+-cop(P2)->werewolf(P2).
+-werewolf(P1)->werewolf(P2).
+
+% P3  says they are the doctor and that they helped P1
+doctor(P3)->-werewolf(P1).
+-doctor(P3)->werewolf(P3).
+-werewolf(P1)->doctor(P3).
+
+% P4 says they are a villager
+-cop(P4).
+-doctor(P4).
+
+% P5 says they are a villager
+-cop(P5).
+-doctor(P5).
+
+% P6 says they are the cop and P5 is a not werewolf
+cop(P6)->-werewolf(P5).
+-cop(P6)->werewolf(P6).
+werewolf(P5)->werewolf(P6).
+
+end_of_list.
